@@ -7,6 +7,9 @@ window.PORTFOLIO_HUB_DATA = {
         { id: "fullstack", label: "Fullstack" },
     ],
 
+    // Для каждого проекта указывается ровно один адрес:
+    // demoUrl — путь к проекту внутри хаба;
+    // liveUrl — адрес опубликованной версии.
     projects: [
         {
             id: "transmission-driving-school",
@@ -27,7 +30,9 @@ window.PORTFOLIO_HUB_DATA = {
                 "REST API",
             ],
             status: "live",
-            demoUrl: "https://transmission-school.duckdns.org/",
+            demoUrl: "./projects/landings/carSchool/",
+            // liveUrl — https://transmission-school.ru/
+            // liveUrl — https://transmission-school.duckdns.org/
         },
     ],
 };

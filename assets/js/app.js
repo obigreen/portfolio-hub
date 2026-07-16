@@ -26,6 +26,21 @@ const createElement = (tagName, className, textContent) => {
     return element;
 };
 
+const getProjectUrl = (project) => {
+    const hasDemoUrl =
+        typeof project.demoUrl === "string" && project.demoUrl.trim() !== "";
+    const hasLiveUrl =
+        typeof project.liveUrl === "string" && project.liveUrl.trim() !== "";
+
+    if (hasDemoUrl === hasLiveUrl) {
+        throw new Error(
+            `Project "${project.id}" must define exactly one URL: demoUrl or liveUrl.`
+        );
+    }
+
+    return hasLiveUrl ? project.liveUrl : project.demoUrl;
+};
+
 const createProjectRow = (project) => {
     const article = createElement("article", "project-row");
 
@@ -47,7 +62,7 @@ const createProjectRow = (project) => {
     content.append(stack);
 
     const link = createElement("a", "project-row__link", "Открыть ↗");
-    link.href = project.demoUrl;
+    link.href = getProjectUrl(project);
     link.target = "_blank";
     link.rel = "noopener noreferrer";
 
