@@ -1,0 +1,24 @@
+.DS_Store
+Thumbs.db
+
+.idea/
+.vscode/
+
+**/node_modules/
+**/.env
+**/.env.*
+!**/.env.example
+
+*.log
+*.sql
+*.zip
+*.tar
+*.tar.gz
+
+**/wp-config.php
+**/wp-content/uploads/
+**/wp-content/cache/
+**/backups/
+
+# Локальный разговорный конспект концепции.
+README-о проекте.txt

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Служебный каталог проектов репозитория Portfolio Hub."
+    >
+    <title>Portfolio Hub</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/projects-data.js" defer></script>
+    <script src="./assets/js/app.js" defer></script>
+</head>
+<body>
+    <header class="toolbar">
+        <nav class="filters" aria-label="Категории проектов" data-filters></nav>
+
+        <dl class="toolbar__stats" aria-label="Статистика хаба">
+            <div>
+                <dt>Проектов</dt>
+                <dd data-project-count>0</dd>
+            </div>
+
+            <div>
+                <dt>Категорий</dt>
+                <dd data-category-count>0</dd>
+            </div>
+        </dl>
+    </header>
+
+    <main class="projects">
+        <p class="projects__result" aria-live="polite" data-filter-result></p>
+
+        <div class="projects__list" data-projects-list></div>
+
+        <div class="empty-state" data-empty-state hidden>
+            В этой категории пока нет проектов.
+        </div>
+    </main>
+</body>
+</html>
