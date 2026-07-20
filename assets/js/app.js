@@ -76,7 +76,7 @@ const getVisibleProjects = () => {
         return hubData.projects;
     }
 
-    return hubData.projects.filter((project) => project.category === activeCategory);
+    return hubData.projects.filter((project) => project.categories.includes(activeCategory));
 };
 
 const renderProjects = () => {

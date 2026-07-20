@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description"
+          content="Работа оператором в международной компании VitaCall. Высокий доход, карьерный рост, возможность удалённой работы."/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Работа в VitaCall</title>
+</head>
+<body>
+
+<style>
+    /*== POPUP FORM ==*/
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-overlay.active {
+        display: flex;
+    }
+
+    .popup-form {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .popup-form input {
+        padding: 0.75rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+
+    .popup-form button {
+        padding: 0.75rem 1.5rem;
+        background-color: #00a884;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .popup-form button:hover {
+        background-color: #00916d;
+    }
+</style>
+
+<div class="popup-overlay" id="popupOverlay">
+    <form class="popup-form" id="jobForm" action="sendtg.php" method="post">
+        <input type="text" name="name" placeholder="Ваше имя" required/>
+        <input type="tel" name="phone" placeholder="Номер телефона" required/>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo-block">
+            <img src="img/logo.png" alt="VitaCall logo" class="logo"/>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="#conditions">Условия</a></li>
+                <li><a href="#benefits">Преимущества работы</a></li>
+                <li><a href="#growth">Карьерный рост</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
+                <li><a href="#equipment">Набор оборудования</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="tel:+79163696818" class="phone-header-link">+7 (916) 369-68-18</a>
+            <a
+                    href="https://api.whatsapp.com/send/?phone=79877364774&text=Здравствуйте,%20хочу%20узнать%20вилку%20зарплаты"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="whatsapp-header-button"
+            >
+                WhatsApp
+            </a>
+            <button class="burger-button" id="burgerToggle">☰</button>
+        </div>
+    </div>
+
+    <div class="burger-menu" id="burgerMenu">
+        <button class="close-burger" id="burgerClose">✖</button>
+        <ul class="burger-nav-list">
+            <li><a href="#conditions">Условия</a></li>
+            <li><a href="#benefits">Преимущества работы</a></li>
+            <li><a href="#growth">Карьерный рост</a></li>
+            <li><a href="#testimonials">Отзывы</a></li>
+            <!--            <li><a href="#promo">Акция</a></li>-->
+            <li><a href="#equipment">Набор оборудования</a></li>
+        </ul>
+        <!--        <div class="burger-phone">-->
+        <!--            <a href="tel:+79163696818">📞 +7 (916) 369-68-18</a>-->
+        <!--        </div>-->
+    </div>
+</header>
+
+
+<main>
+
+    <section id="conditions" class="hero">
+        <div class="hero-content">
+            <h1><span class="highlight">VitaCall</span> приглашает на работу операторов</h1>
+            <p>Начните зарабатывать от 70 000 рублей в международной компании <span class="highlight">VitaCall</span>.
+            </p>
+            <ul>
+                <li>выплаты еженедельно</li>
+                <li>официальное трудоустройство</li>
+                <li>быстрый карьерный рост</li>
+                <li>можно без опыта работы</li>
+            </ul>
+            <button class="cta-button">ХОЧУ РАБОТАТЬ У ВАС</button>
+        </div>
+        <div class="hero-image">
+            <img src="img/main.jpg" alt="Операторы колл-центра">
+        </div>
+    </section>
+
+    <section class="section-tasks">
+        <div class="container-tasks">
+            <h2 class="section-title">Чем вы будете заниматься?</h2>
+            <div class="tasks-list">
+                <div class="tasks-list-item">
+                    <div class="tasks-list-item-icon">
+                        <img src="img/icon1.png" alt="">
+                    </div>
+                    <div class="tasks-list-item-text">
+                        Общаться с клиентами по входящим и исходящим звонкам
+                    </div>
+                </div>
+                <div class="tasks-list-item">
+                    <div class="tasks-list-item-icon">
+                        <img src="img/icon2.png" alt="">
+                    </div>
+                    <div class="tasks-list-item-text">
+                        Консультировать по продуктам для здоровья и сервису компании
+                    </div>
+                </div>
+                <div class="tasks-list-item">
+                    <div class="tasks-list-item-icon">
+                        <img src="img/icon3.png" alt="">
+                    </div>
+                    <div class="tasks-list-item-text">
+                        Помогать клиентам на каждом этапе — от первого обращения до решения вопроса
+                    </div>
+                </div>
+                <div class="tasks-list-item">
+                    <div class="tasks-list-item-icon">
+                        <img src="img/icon4.png" alt="">
+                    </div>
+                    <div class="tasks-list-item-text">
+                        Строить доверие и подбирать лучшие решения индивидуально для каждого
+                    </div>
+                </div>
+            </div>
+            <button class="cta-outline cta-button">ХОЧУ ПОПРОБОВАТЬ</button>
+        </div>
+    </section>
+
+    <section id="benefits" class="section-about">
+        <div class="container-about">
+            <h2 class="section-title">Почему хотят работать у нас?</h2>
+
+            <p class="about-intro">
+                <strong class="highlight">VitaCall</strong> — международный call-центр, где каждый может построить
+                карьеру,
+                <strong>независимо от опыта</strong>.
+                <br/>Мы — команда, которая помогает людям получать качественные консультации по продуктам здоровья и
+                сервиса.
+                <br/>Общаемся с заботой, говорим просто и по-человечески — так, как сами хотели бы, чтобы говорили с
+                нами.
+            </p>
+
+            <h3 class="section-subtitle">Наша миссия</h3>
+            <p class="about-mission">
+                Создавать комфортную и профессиональную коммуникацию, чтобы помогать людям заботиться о себе и близких.
+            </p>
+
+
+            <div class="section-about-bottom">
+                <div class="section-about-bottom-left">
+                    <img src="img/sec3.jpg" alt="">
+                </div>
+                <div class="section-about-bottom-right">
+                    <h3 class="section-subtitle">Почему с нами остаются:</h3>
+                    <ul class="about-benefits">
+                        <li class="about-benefits-item-left">
+                            <span>
+                                <strong>💸 Зарплата без потолка:</strong> зарабатывайте столько, сколько хотите
+                            </span>
+                        </li>
+                        <li class="about-benefits-item-right">
+                            <span>
+                                <strong>🎓 Легко обучим с нуля</strong> опыт не требуется
+                            </span>
+                        </li>
+                        <li class="about-benefits-item-left">
+                            <span>
+                                <strong>🌍 Удалённый формат</strong> из любой точки мира или работа в комфортном офисе
+                            </span>
+                        </li>
+                        <li class="about-benefits-item-right">
+                            <span>
+                                <strong>🚀 Поддержка и рост с первого дня</strong>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <style>
+        .section-career {
+            background: #f7f9fc;
+            padding: 6vh clamp(1rem, 5vw, 4rem);
+        }
+
+        .container-career {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .career-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .career-img {
+            flex: 1 1 400px;
+        }
+
+        .career-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+
+        .career-text {
+            flex: 1 1 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .career-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .career-points {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .career-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 10px;
+        }
+
+        .career-card img {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+        }
+
+        .icon-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .career-card p {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .career-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .button-wrapp {
+            margin: 20px auto 0 auto;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .career-content {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .career-text {
+                padding-top: 1rem;
+                flex: 1 1 100px;
+            }
+
+            .career-img {
+                flex: 1 1 100px;
+            }
+        }
+
+    </style>
+
+    <section id="growth" class="section-career">
+        <div class="container-career">
+            <h2 class="section-title">
+                Хотите перестать бояться за зарплату и построить карьеру,<br>которая реально меняет жизнь?
+            </h2>
+
+            <div class="career-content">
+
+                <div class="career-text">
+                    <div class="career-points">
+                        <div class="career-card fade-in">
+                            <div class="icon-wrapper">
+                                <img src="img/career-icon1.png" alt="icon">
+                            </div>
+                            <p>Чёткий путь роста</p>
+                        </div>
+                        <div class="career-card fade-in">
+                            <div class="icon-wrapper">
+                                <img src="img/career-icon2.png" alt="icon">
+                            </div>
+                            <p>Статус и уважение в профессиональном сообществе</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="career-img">
+                    <img src="img/career.png" alt="">
+                </div>
+
+                <div class="career-text">
+                    <div class="career-points">
+                        <div class="career-card fade-in">
+                            <div class="icon-wrapper">
+                                <img src="img/career-icon3.png" alt="icon">
+                            </div>
+                            <p>Доход без потолка — оплачиваем ваш труд по-настоящему</p>
+                        </div>
+                        <div class="career-card fade-in">
+                            <div class="icon-wrapper">
+                                <img src="img/career-icon4.png" alt="icon">
+                            </div>
+                            <p>Обучение и поддержка — даже если у вас нет опыта</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="button-wrapp">
+                <button class="cta-button career-button">НАЧАТЬ КАРЬЕРУ</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cards = document.querySelectorAll(".career-card");
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                cards.forEach((card, i) => {
+                    setTimeout(() => {
+                        card.classList.add("visible");
+                    }, i * 500);
+                });
+                observer.disconnect();
+            }
+        }, {
+            threshold: 0.3
+        });
+
+        observer.observe(document.querySelector(".section-career"));
+
+
+    </script>
+
+    <section id="testimonials" class="section-testimonials">
+        <div class="container-testimonials">
+            <h2 class="section-title">Что о нас говорят сотрудники?</h2>
+
+            <style>
+                .rew-name {
+                    display: flex;
+                    align-items: start;
+                    gap: 10px
+                }
+
+                .rew-avatar {
+                    min-width: 50px;
+                    min-height: 50px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .avatar-1 {
+                    background-image: url('img/rew1.jpg');
+                }
+
+                .avatar-2 {
+                    background-image: url('img/rew2.jpg');
+                }
+
+                .avatar-3 {
+                    background-image: url('img/rew3.jpg');
+                }
+
+                .avatar-4 {
+                    background-image: url('img/rew4.jpg');
+                }
+
+                .avatar-5 {
+                    background-image: url('img/rew5.jpg');
+                }
+
+                .avatar-6 {
+                    background-image: url('img/rew6.jpg');
+                }
+
+                .avatar-7 {
+                    background-image: url('img/rew7.jpg');
+                }
+            </style>
+
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide testimonial-card">
+                        <div class="rew-name">
+                            <div class="rew-avatar avatar-1">
+
+                            </div>
+                            <h3 class="testimonial-role">Марина, 24 года, <br> оператор</h3>
+                        </div>
+
+
+                        <p class="testimonial-text">«Я сюда пришла вообще без опыта, думала, что будет сложно, а
+                            оказалось
+                            обучение супер понятное. Коллеги прикольные, всегда поддержат. Зарплата приходит вовремя, да
+                            и
+                            бонусы радуют. Работаю с удовольствием, че тут скажешь!»</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial-card">
+
+                        <div class="rew-name">
+                            <div class="rew-avatar avatar-2">
+
+                            </div>
+                            <h3 class="testimonial-role">Иван, 35 лет, <br> супервайзер</h3>
+                        </div>
+
+
+                        <p class="testimonial-text">«За 2 года поднялся с нуля до супервайзера. Тут реально дают шанс,
+                            если
+                            ты хочешь работать и развиваться. График удобный, можно и из дома иногда. Руководство не
+                            тупит,
+                            всегда можно поговорить.»</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial-card">
+                        <div class="rew-name">
+                            <div class="rew-avatar avatar-3">
+
+                            </div>
+                            <h3 class="testimonial-role">Ольга, 42 года, <br> тренер</h3>
+                        </div>
+
+                        <p class="testimonial-text">«Обожаю свою работу тренера — учить новичков, смотреть, как они
+                            растут.
+                            Это как дерево посадил и следишь за его ростом и плодами. В VitaCall все по-человечески, без
+                            воды и формальностей. Руководство всегда на связи, идей полно, атмосфера отличная.»</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial-card">
+                        <div class="rew-name">
+                            <div class="rew-avatar avatar-4">
+
+                            </div>
+                            <h3 class="testimonial-role">Алексей, 29 лет, <br> контроль качества</h3>
+                        </div>
+
+                        <p class="testimonial-text">«Работа нормальная, зарплата выше среднего, график гибкий. Коллектив
+                            помогает и не мешает, всё по делу. Сложного ничего нет. Скрипты знаешь — и дело в
+                            шляпе.»</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial-card">
+                        <div class="rew-name">
+                            <div class="rew-avatar avatar-5">
+
+                            </div>
+                            <h3 class="testimonial-role">Екатерина, 22 года, <br> оператор</h3>
+                        </div>
+
+                        <p class="testimonial-text">«Это мой первый опыт, и я довольна. Обучение простое, понятное,
+                            наставники всегда помогут. Зарплата стабильно приходит, можно расти внутри компании.
+                            Классное
+                            место для старта!»</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial-card">
+                        <div class="rew-name">
+                            <div class="rew-avatar avatar-6">
+
+                            </div>
+                            <h3 class="testimonial-role">Сергей, 38 лет, <br> руководитель группы</h3>
+                        </div>
+
+                        <p class="testimonial-text">«VitaCall дал мне не просто работу, а уверенность в себе. Пришел
+                            несколько лет назад, думал, пока здесь поторчу, потом найду что-нибудь. Но втянулся быстро и
+                            проснулся прям азарт забраться по карьерной лестнице. Жена мной гордится, я один в семье
+                            работаю, а такое не каждый может позволить.»</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial-card">
+                        <div class="rew-name">
+                            <div class="rew-avatar avatar-7">
+
+                            </div>
+                            <h3 class="testimonial-role">Нина, 30 лет, <br> оператор</h3>
+                        </div>
+
+                        <p class="testimonial-text">«Удалёнка — это кайф, можно совмещать с семьёй. Я как в декрет ушла,
+                            сначала как подработку рассматривала, а сейчас уже на постоянке работаю и не планирую
+                            останавливаться. Заработать можно прям отлично, все от нас зависит.»</p>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-arrows">
+                    <div class="swiper-button-prev custom-arrow"></div>
+                    <div class="swiper-button-next custom-arrow"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--    <section id="promo" class="section-whatsapp">-->
+    <!--        <div class="container-whatsapp">-->
+    <!--            <h2 class="section-title">💬 Хотите узнать, сколько вы будете зарабатывать?</h2>-->
+    <!--            <p class="whatsapp-text">-->
+    <!--                Напишите нам в <strong>WhatsApp</strong> — расскажем,<br/>-->
+    <!--                <strong>какую ставку мы готовы предложить вам</strong><br/>-->
+    <!--                и <strong>на что можно рассчитывать с вашим опытом</strong>.-->
+    <!--            </p>-->
+    <!--            <a-->
+    <!--                    href="https://api.whatsapp.com/send/?phone=79877364774&text=Здравствуйте,%20хочу%20узнать%20вилку%20зарплаты"-->
+    <!--                    target="_blank"-->
+    <!--                    rel="noopener noreferrer"-->
+    <!--                    class="whatsapp-button"-->
+    <!--            >-->
+    <!--                Написать в WhatsApp-->
+    <!--            </a>-->
+    <!--        </div>-->
+    <!--    </section>-->
+
+    <section id="equipment" class="section-equipment">
+        <div class="container-equipment">
+            <h2 class="section-title center">ДЛЯ УСПЕШНОЙ РАБОТЫ В <span class="highlight">VitaCall</span> ВАМ
+                ПОТРЕБУЕТСЯ</h2>
+            <p class="equipment-subtitle">МИНИМАЛЬНЫЙ НАБОР НЕОБХОДИМОГО ОБОРУДОВАНИЯ</p>
+
+            <div class="equipment-grid">
+
+                <div class="equipment-card horizontal">
+                    <div class="equipment-img">
+                        <img src="img/tech1.jpg" alt="Компьютер">
+                    </div>
+                    <div class="equipment-text">
+                        <h3>Компьютер или ноутбук</h3>
+                        <p>Наличие компьютера или ноутбука (с ОС не ниже Windows 10 и оперативной памятью не менее 4-х
+                            гигабайтов)</p>
+                    </div>
+                </div>
+
+                <div class="equipment-card horizontal">
+                    <div class="equipment-img">
+                        <img src="img/tech2.jpg" alt="Удаленная работа">
+                    </div>
+                    <div class="equipment-text">
+                        <h3>Возможность работать удаленно</h3>
+                        <p>Стабильный интернет, с хорошей скоростью для комфортной работы (мобильный не подойдёт)</p>
+                    </div>
+                </div>
+
+                <div class="equipment-card horizontal">
+                    <div class="equipment-img">
+                        <img src="img/tech3.jpg" alt="Гарнитура">
+                    </div>
+                    <div class="equipment-text">
+                        <h3>Наличие гарнитуры</h3>
+                        <p>Наушники с микрофоном</p>
+                    </div>
+                </div>
+
+                <div class="equipment-card horizontal">
+                    <div class="equipment-img">
+                        <img src="img/tech4.jpg" alt="Обучение">
+                    </div>
+                    <div class="equipment-text">
+                        <h3>Обучение</h3>
+                        <p>Возможность проходить обучение 3 дня (полный рабочий день)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .section-quiz {
+            background-color: #f7f9fc;
+            padding: 6vh clamp(1rem, 5vw, 4rem);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .quiz-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            max-width: 720px;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .quiz-header {
+            background-color: #00a884;
+            color: #fff;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .quiz-header__icon {
+            font-size: 1.5rem;
+        }
+
+        .quiz-header__title h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .quiz-header__title p {
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 0.2rem 0 0;
+        }
+
+        .quiz-header__progress {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .quiz-progress-bar {
+            height: 5px;
+            background: rgba(156, 156, 156, 0.3);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .quiz-step {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .quiz-step.active {
+            display: block;
+        }
+
+        .quiz-step label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .quiz-step input[type="text"],
+        .quiz-step input[type="tel"] {
+            width: 100%;
+            padding: 0.7rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-step input[type="range"] {
+            width: 100%;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .range-value {
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-step input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .quiz-step label input[type="radio"] {
+            vertical-align: middle;
+            margin-right: 0.4rem;
+        }
+
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            padding-top: 1rem;
+            gap: 1rem;
+        }
+
+        .quiz-button {
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .quiz-button-prev {
+            background-color: #ffffff;
+            color: #00a884;
+            border: 2px solid #00a884;
+            pointer-events: auto;
+        }
+
+        .quiz-button-prev:disabled {
+            background-color: #e0e0e0;
+            color: #999;
+            border: none;
+            cursor: not-allowed;
+        }
+
+        .quiz-button-next {
+            background-color: #00a884;
+            color: #fff;
+        }
+
+        .quiz-button-next:hover:not(:disabled) {
+            background-color: #009973;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .quiz-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .quiz-nav {
+                flex-direction: column;
+            }
+
+            .quiz-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+
+    </style>
+
+    <section class="section-quiz">
+        <div class="quiz-container">
+            <!-- Header -->
+            <div class="quiz-header">
+                <div class="quiz-header__icon">📋</div>
+                <div class="quiz-header__title">
+                    <h2>Заполните анкету</h2>
+                    <p class="quiz-subtitle">и мы свяжемся с вами и расскажем подробности</p>
+
+                </div>
+                <div class="quiz-header__progress">
+                    <span id="currentStepDisplay">1</span>/<span id="totalStepsDisplay">12</span>
+                </div>
+            </div>
+            <div class="quiz-progress-bar">
+                <div class="quiz-progress-fill" id="quizProgressBar"></div>
+            </div>
+
+            <style>
+                .error-message {
+                    color: #d70000;
+                    font-size: 0.85rem;
+                    margin-top: 0.25rem;
+                    display: none;
+                }
+            </style>
+
+
+            <!-- Quiz Form -->
+            <form id="quiz-form" action="sendtg.php" method="post">
+                <div class="quiz-step active" data-step="1">
+                    <label>ФИО по паспорту</label>
+                    <input type="text" name="fullname" required placeholder="">
+                    <div class="error-message">Пожалуйста, заполните это поле</div>
+                </div>
+
+                <div class="quiz-step" data-step="2">
+                    <label>Город проживания</label>
+                    <input type="text" name="city" value="Москва">
+                    <div class="error-message">Пожалуйста, заполните это поле</div>
+                </div>
+
+                <div class="quiz-step" data-step="3">
+                    <label>Ваш телефон</label>
+                    <input type="tel" name="phone" placeholder="+7 (___) ___-__-__">
+                    <div class="error-message">Пожалуйста, заполните это поле</div>
+                </div>
+
+                <div class="quiz-step" data-step="4">
+                    <label>Ваш контакт в телеграмм</label>
+                    <small>Если у вас нет телеграмм для дальнейшей работы Вам необходимо его создать</small>
+                    <input type="text" name="telegram" placeholder="@ivan">
+                    <div class="error-message">Пожалуйста, заполните это поле</div>
+                </div>
+
+                <div class="quiz-step" data-step="5">
+                    <label>Сколько Вам полных лет?</label>
+                    <input type="range" min="0" max="100" value="50" id="ageRange">
+                    <div class="range-value" id="ageValue">50</div>
+                </div>
+
+                <div class="quiz-step" data-step="6">
+                    <label>Какой график Вам подходит?</label>
+                    <label><input type="radio" name="schedule"> 5/2 с плавающими выходными</label>
+                    <label><input type="radio" name="schedule"> 2 через 2</label>
+                    <label><input type="radio" name="schedule"> Никакой вариант не подошел</label>
+                    <div class="error-message">Пожалуйста, выберите один вариант</div>
+                </div>
+
+                <div class="quiz-step" data-step="7">
+                    <label>Ваш компьютер в рабочем состоянии?</label>
+                    <label><input type="radio" name="computer"> Да</label>
+                    <label><input type="radio" name="computer"> Нет</label>
+                    <div class="error-message">Пожалуйста, выберите один вариант</div>
+                </div>
+
+                <div class="quiz-step" data-step="8">
+                    <label>Какая скорость Интернета на компьютере?</label>
+                    <label><input type="radio" name="internet"> Менее 5 мбит</label>
+                    <label><input type="radio" name="internet"> 5–20 Мбит</label>
+                    <label><input type="radio" name="internet"> Более 20 Мбит</label>
+                    <label><input type="radio" name="internet"> У меня мобильный интернет</label>
+                    <label><input type="radio" name="internet"> У меня только модем с сим-картой</label>
+                    <label><input type="radio" name="internet"> Интернет отсутствует</label>
+                    <div class="error-message">Пожалуйста, выберите один вариант</div>
+                </div>
+
+                <div class="quiz-step" data-step="9">
+                    <label>Какая операционная система на вашем ПК?</label>
+                    <label><input type="radio" name="os"> Windows 11</label>
+                    <label><input type="radio" name="os"> Windows 10</label>
+                    <label><input type="radio" name="os"> Windows 8</label>
+                    <label><input type="radio" name="os"> Windows 7</label>
+                    <label><input type="radio" name="os"> Mac OS</label>
+                    <label><input type="radio" name="os"> Linux OS</label>
+                    <label><input type="radio" name="os"> Свой вариант</label>
+                    <div class="error-message">Пожалуйста, выберите один вариант</div>
+                </div>
+
+                <div class="quiz-step" data-step="10">
+                    <label>Сколько оперативной памяти на вашем ПК?</label>
+                    <label><input type="radio" name="ram"> 4 Гб и более</label>
+                    <label><input type="radio" name="ram"> Менее 4 Гб</label>
+                    <div class="error-message">Пожалуйста, выберите один вариант</div>
+                </div>
+
+                <div class="quiz-step" data-step="11">
+                    <label>Каким иностранным языком вы обладаете?</label>
+                    <label><input type="radio" name="lang"> Болгарский</label>
+                    <label><input type="radio" name="lang"> Венгерский</label>
+                    <label><input type="radio" name="lang"> Греческий</label>
+                    <label><input type="radio" name="lang"> Испанский</label>
+                    <label><input type="radio" name="lang"> Итальянский</label>
+                    <label><input type="radio" name="lang"> Казахский</label>
+                    <label><input type="radio" name="lang"> Немецкий</label>
+                    <label><input type="radio" name="lang"> Румынский</label>
+                    <label><input type="radio" name="lang"> Знаю только русский</label>
+                    <div class="error-message">Пожалуйста, выберите один вариант</div>
+                </div>
+
+                <div class="quiz-step" data-step="12">
+                    <label>Был ли у Вас опыт продаж по телефону?</label>
+                    <label><input type="radio" name="sales"> Нет</label>
+                    <label><input type="radio" name="sales"> Да, менее 1 года</label>
+                    <label><input type="radio" name="sales"> Да, более 1 года</label>
+                    <label><input type="radio" name="sales"> Да, более 3 лет</label>
+                    <div class="error-message">Пожалуйста, выберите один вариант</div>
+                </div>
+
+                <div class="quiz-nav">
+                    <button type="button" class="quiz-button quiz-button-prev" disabled>← Назад</button>
+                    <button type="button" class="quiz-button quiz-button-next">Далее →</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+    <script>
+
+        let isSubmitting = false;
+        const nextBtn = document.querySelector('.quiz-button-next');
+
+        function submitQuizData(data, form, onSuccess) {
+            fetch('sendtg.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Анкета успешно отправлена!');
+                        form.reset();
+                        if (typeof onSuccess === 'function') onSuccess();
+                    } else {
+                        alert('Ошибка при отправке анкеты.');
+                    }
+                })
+                .catch(() => {
+                    alert('Сервер недоступен.');
+                    isSubmitting = false;
+                    nextBtn.disabled = false;
+                });
+        }
+
+        function handlePopupForm(form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const data = {};
+                const inputs = form.querySelectorAll('input');
+                inputs.forEach(input => {
+                    data[input.name] = input.value.trim();
+                });
+
+                fetch('sendtg.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                    .then(res => {
+                        if (res.ok) {
+                            alert('Форма отправлена!');
+                            form.reset();
+                        } else {
+                            alert('Ошибка отправки.');
+                        }
+                    })
+                    .catch(() => {
+                        alert('Ошибка соединения.');
+                    });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const popupForm = document.getElementById('jobForm');
+            if (popupForm) handlePopupForm(popupForm);
+
+            const steps = document.querySelectorAll('.quiz-step');
+            const prevBtn = document.querySelector('.quiz-button-prev');
+            const progressBar = document.getElementById('quizProgressBar');
+            const currentStepDisplay = document.getElementById('currentStepDisplay');
+            const totalStepsDisplay = document.getElementById('totalStepsDisplay');
+            const form = document.getElementById('quiz-form');
+            const ageRange = document.getElementById('ageRange');
+            const ageValue = document.getElementById('ageValue');
+
+            let currentStep = 0;
+            const totalSteps = steps.length;
+
+            if (totalStepsDisplay) totalStepsDisplay.textContent = totalSteps;
+
+            function updateStepUI() {
+                steps.forEach((step, index) => {
+                    step.classList.toggle('active', index === currentStep);
+                });
+                if (currentStepDisplay) currentStepDisplay.textContent = currentStep + 1;
+                if (progressBar) progressBar.style.width = `${((currentStep + 1) / totalSteps) * 100}%`;
+                prevBtn.disabled = currentStep === 0;
+                nextBtn.textContent = currentStep === totalSteps - 1 ? 'Отправить' : 'Далее →';
+            }
+
+            function clearErrors(stepElement) {
+                const errors = stepElement.querySelectorAll('.error-message');
+                errors.forEach(err => err.style.display = 'none');
+            }
+
+            function validateStep() {
+                const step = steps[currentStep];
+                clearErrors(step);
+                const inputs = step.querySelectorAll('input');
+                let valid = true;
+                const grouped = {};
+
+                inputs.forEach(input => {
+                    const error = input.closest('div')?.querySelector('.error-message');
+                    if (input.type === 'radio') {
+                        if (!grouped[input.name]) {
+                            grouped[input.name] = step.querySelectorAll(`input[name="${input.name}"]`);
+                        }
+                    } else if (input.type === 'text' || input.type === 'tel') {
+                        if (input.value.trim() === '') {
+                            valid = false;
+                            if (error) error.style.display = 'block';
+                        }
+                    }
+                });
+
+                for (let groupName in grouped) {
+                    const group = grouped[groupName];
+                    const checked = Array.from(group).some(r => r.checked);
+                    if (!checked) {
+                        valid = false;
+                        const lastRadio = group[group.length - 1];
+                        const error = lastRadio.closest('div')?.querySelector('.error-message');
+                        if (error) error.style.display = 'block';
+                    }
+                }
+
+                return valid;
+            }
+
+            function collectQuizData() {
+                const data = {};
+                const formInputs = form.querySelectorAll('input');
+
+                formInputs.forEach(input => {
+                    if (input.type === 'radio') {
+                        if (input.checked) {
+                            data[input.name] = input.nextSibling.textContent.trim();
+                        }
+                    } else if (input.type === 'range') {
+                        data['age'] = input.value;
+                    } else {
+                        data[input.name] = input.value;
+                    }
+                });
+
+                return data;
+            }
+
+
+
+            nextBtn.addEventListener('click', () => {
+                if (isSubmitting) return;
+                if (!validateStep()) return;
+
+                if (currentStep === totalSteps - 1) {
+                    isSubmitting = true;
+                    nextBtn.disabled = true;
+
+                    const data = collectQuizData();
+                    submitQuizData(data, form, () => {
+                        currentStep = 0;
+                        updateStepUI();
+                        isSubmitting = false;
+                        nextBtn.disabled = false;
+                    });
+
+                    return;
+                }
+
+                currentStep++;
+                updateStepUI();
+            });
+
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateStepUI();
+                }
+            });
+
+            if (ageRange && ageValue) {
+                ageRange.addEventListener('input', () => {
+                    ageValue.textContent = ageRange.value;
+                });
+            }
+
+            form.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', () => {
+                    const error = input.closest('div')?.querySelector('.error-message');
+                    if (error) error.style.display = 'none';
+                });
+                input.addEventListener('change', () => {
+                    const error = input.closest('div')?.querySelector('.error-message');
+                    if (error) error.style.display = 'none';
+                });
+            });
+
+            updateStepUI();
+        });
+    </script>
+
+
+
+    <style>
+        .site-footer {
+            background-color: #00a884;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            margin-top: 4rem;
+        }
+
+        .footer-top {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-logo img {
+            height: 50px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            background-color: #009973;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+
+        @media screen and (max-width: 426px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+           .footer-logo img {
+               margin-bottom: 20px;
+            }
+        }
+    </style>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+<!--            <div class="footer-logo">-->
+<!--                <img src="img/logo.png" alt="VitaCall Logo"/>-->
+<!--            </div>-->
+            <ul class="footer-links">
+                <li><a href="#conditions">Условия</a></li>
+                <li><a href="#benefits">Преимущества работы</a></li>
+                <li><a href="#growth">Карьерный рост</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
+                <li><a href="#equipment">Набор оборудования</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            ©
+            <script>document.write(new Date().getFullYear())</script>
+            All Rights reserved <br>
+            <a href="pp.html" target="_blank" style="color: inherit; text-decoration: none">Privacy Policy</a>
+        </div>
+    </footer>
+</main>
+
+
+<script>
+    const burgerToggle = document.getElementById("burgerToggle");
+    const burgerMenu = document.getElementById("burgerMenu");
+    const burgerClose = document.getElementById("burgerClose");
+    const navLinks = burgerMenu.querySelectorAll("a");
+
+    burgerToggle.addEventListener("click", () => {
+        burgerMenu.classList.add("active");
+    });
+
+    burgerClose.addEventListener("click", () => {
+        burgerMenu.classList.remove("active");
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            burgerMenu.classList.remove("active");
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    const ctaButtons = document.querySelectorAll(".cta-button");
+    const popupOverlay = document.getElementById("popupOverlay");
+
+    ctaButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            popupOverlay.classList.add("active");
+        });
+    });
+
+    popupOverlay.addEventListener("click", (e) => {
+        if (e.target === popupOverlay) {
+            popupOverlay.classList.remove("active");
+        }
+    });
+
+</script>
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/swiperScript.js"></script>
+
+</body>
+</html>

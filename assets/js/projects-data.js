@@ -14,7 +14,7 @@ window.PORTFOLIO_HUB_DATA = {
         {
             id: "transmission-driving-school",
             title: "Transmission Driving School",
-            category: "landings",
+            categories: ['landings', 'fullstack'],
             type: "WordPress landing",
             description:
                 "Адаптивный сайт автошколы: от дизайна и верстки до кастомной WordPress-темы, плагина заявок и публикации на VPS.",
@@ -33,6 +33,26 @@ window.PORTFOLIO_HUB_DATA = {
             demoUrl: "./projects/landings/carSchool/",
             // liveUrl — https://transmission-school.ru/
             // liveUrl — https://transmission-school.duckdns.org/
+        },
+
+        {
+            id: "vitaCall",
+            title: "VitaCall",
+            categories: ["landings"],
+            type: "Custom landing",
+            description:
+                "Адаптивный рекрутинговый лендинг, разработанный с нуля по текстовому ТЗ, с интерактивной анкетой и отправкой заявок в Telegram.",
+            stack: [
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "Swiper",
+                "PHP",
+                "Telegram Bot API",
+            ],
+            status: "live",
+            demoUrl: "./projects/landings/VitaCall/",
+            // liveUrl — https://vitacall.ru/
         },
     ],
 };
