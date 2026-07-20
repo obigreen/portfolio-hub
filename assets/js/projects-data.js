@@ -37,7 +37,7 @@ window.PORTFOLIO_HUB_DATA = {
 
         {
             id: "vitaCall",
-            title: "VitaCall",
+            title: "vitaCall",
             categories: ["landings"],
             type: "Custom landing",
             description:
@@ -51,7 +51,7 @@ window.PORTFOLIO_HUB_DATA = {
                 "Telegram Bot API",
             ],
             status: "live",
-            demoUrl: "./projects/landings/VitaCall/",
+            demoUrl: "./projects/landings/vitaCall/",
             // liveUrl — https://vitacall.ru/
         },
     ],
