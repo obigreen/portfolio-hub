@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadient</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/adaptive.css">
 </head>
-<body>
+<body id="top">
 
 <header class="header">
     <div class="container header__container">
@@ -17,7 +18,7 @@
             <span class="header__logo-text">Shadient.co</span>
         </a>
 
-        <nav class="header__nav" aria-label="Primary navigation">
+        <nav class="header__nav" id="primary-navigation" aria-label="Primary navigation" data-menu>
             <ul class="header__list">
                 <li class="header__list-item">
                     <a href="#company" class="header__list-link header__list-link--with-icon">
@@ -32,10 +33,14 @@
                     <a href="#resources" class="header__list-link">Resources</a>
                 </li>
                 <li class="header__list-item header__list-item--contact">
-                    <a href="#contact" class="header__contact">Contact</a>
+                    <a href="#contact" class="button button--outline button--compact header__contact">Contact</a>
                 </li>
             </ul>
         </nav>
+
+        <button class="header__menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>
+            <span class="header__menu-icon" aria-hidden="true">Menu</span>
+        </button>
     </div>
 </header>
 
@@ -64,8 +69,8 @@
 
                 <form class="hero__form" action="#" method="post">
                     <label class="visually-hidden" for="hero-email">Email address</label>
-                    <input class="hero__input" id="hero-email" name="email" type="email" placeholder="Email" autocomplete="email" required>
-                    <button class="hero__submit" type="submit">Attract</button>
+                    <input class="field field--dark hero__input" id="hero-email" name="email" type="email" placeholder="Email" autocomplete="email" required>
+                    <button class="button button--primary hero__submit" type="submit">Attract</button>
                 </form>
             </div>
         </div>
@@ -74,9 +79,9 @@
     <section class="trusted" id="company" aria-labelledby="trusted-title">
         <div class="container trusted__container">
             <div class="trusted__intro">
-                <h2 class="trusted__title" id="trusted-title">Trusted by 200+ companies around the world</h2>
+                <h2 class="section-heading trusted__title" id="trusted-title">Trusted by 200+ companies around the world</h2>
 
-                <p class="trusted__description">
+                <p class="section-copy trusted__description">
                     Vulputate molestie molestie amet leo blandit accumsan. Sapien sed amet tellus purus sit odio eget.
                     Diam morbi faucibus vitae neque id in. Nullam sed et dapibus nunc, porta enim orci urna, sit. Lectus ac.
                 </p>
@@ -170,7 +175,338 @@
             </div>
         </div>
     </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+        <div class="container services__container">
+            <div class="services__intro">
+                <h2 class="section-heading services__title" id="services-title">We Offer</h2>
+
+                <p class="section-copy services__description">
+                    Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit.
+                    Morbi rhoncus, tellus, eros consequat magna semper orci a tincidunt.
+                </p>
+            </div>
+
+            <ul class="services__list">
+                <li class="services__item">
+                    <img class="services__icon" src="img/icons/services/branding.svg" alt="" aria-hidden="true">
+                    <h3 class="services__item-title">Branding</h3>
+                    <p class="services__item-description">
+                        Egestas tellus nunc proin amet tellus tincidunt lacus consequat. Ultrices
+                    </p>
+                </li>
+
+                <li class="services__item">
+                    <img class="services__icon" src="img/icons/services/web-development.svg" alt="" aria-hidden="true">
+                    <h3 class="services__item-title">Web development</h3>
+                    <p class="services__item-description">
+                        Integer ante non nunc, eget est justo vel semper nunc. Lacus
+                    </p>
+                </li>
+
+                <li class="services__item">
+                    <img class="services__icon" src="img/icons/services/digital-marketing.svg" alt="" aria-hidden="true">
+                    <h3 class="services__item-title">Digital marketing</h3>
+                    <p class="services__item-description">
+                        Sed faucibus faucibus egestas volutpat, accumsan adipiscing egestas est. Auctor et leo urna est.
+                    </p>
+                </li>
+
+                <li class="services__item">
+                    <img class="services__icon" src="img/icons/services/mobile-app.svg" alt="" aria-hidden="true">
+                    <h3 class="services__item-title">Mobile App</h3>
+                    <p class="services__item-description">
+                        Egestas tellus nunc proin amet tellus tincidunt lacus consequat. Ultrices
+                    </p>
+                </li>
+
+                <li class="services__item">
+                    <img class="services__icon" src="img/icons/services/seo.svg" alt="" aria-hidden="true">
+                    <h3 class="services__item-title">SEO</h3>
+                    <p class="services__item-description">
+                        Integer ante non nunc, eget est justo vel semper nunc. Lacus
+                    </p>
+                </li>
+
+                <li class="services__item">
+                    <img class="services__icon" src="img/icons/services/user-testing.svg" alt="" aria-hidden="true">
+                    <h3 class="services__item-title">User testing</h3>
+                    <p class="services__item-description">
+                        Sed faucibus faucibus egestas volutpat, accumsan adipiscing egestas est. Auctor et leo urna est.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="why-choose" aria-labelledby="why-choose-title">
+        <div class="why-choose__visual" aria-hidden="true">
+            <img class="why-choose__glow" src="img/illustrations/why-choose-glow.svg" alt="">
+            <img class="why-choose__character" src="img/illustrations/why-choose-character.svg" alt="">
+        </div>
+
+        <div class="container why-choose__container">
+            <div class="why-choose__content">
+                <div class="why-choose__copy">
+                    <h2 class="section-heading why-choose__title" id="why-choose-title">Why choose us</h2>
+
+                    <p class="section-copy why-choose__description">
+                        Commodo diam vulputate dui proin quis enim nibh. Non integer ac libero facilisis hendrerit a at.
+                        Nisi sem ut sed sed faucibus at eu elit. Morbi aliquam porttitor mattis consequat neque, tellus blandit.
+                    </p>
+                </div>
+
+                <a class="button button--outline why-choose__link" href="#contact">Let’s connect</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="work" id="resources" aria-labelledby="work-title">
+        <div class="container work__container">
+            <div class="work__intro">
+                <div class="work__copy">
+                    <h2 class="section-heading work__title" id="work-title">Some pieces of our work</h2>
+                    <p class="section-copy work__description">
+                        Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit.
+                        Morbi rhoncus, tellus, eros consequat magna semper orci a tincidunt.
+                    </p>
+                </div>
+
+                <a class="button button--outline work__more" href="#resources">Show more</a>
+            </div>
+
+            <ul class="work__list">
+                <li class="work-card work-card--featured">
+                    <div class="work-card__media" aria-hidden="true"></div>
+                    <div class="work-card__content">
+                        <span class="work-card__tag">Website</span>
+                        <h3 class="work-card__title">Creative landing page</h3>
+                        <a class="work-card__link" href="#" aria-label="Read more about Creative landing page">
+                            <span>Read more</span>
+                            <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="work-card">
+                    <div class="work-card__content">
+                        <span class="work-card__tag">Branding</span>
+                        <h3 class="work-card__title">Creative Branding</h3>
+                        <a class="work-card__link" href="#" aria-label="Read more about Creative Branding">
+                            <span>Read more</span>
+                            <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="work-card">
+                    <div class="work-card__content">
+                        <span class="work-card__tag">Development</span>
+                        <h3 class="work-card__title">Automation. Advanced Level</h3>
+                        <a class="work-card__link" href="#" aria-label="Read more about Automation. Advanced Level">
+                            <span>Read more</span>
+                            <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="work-card">
+                    <div class="work-card__content">
+                        <span class="work-card__tag">Digital marketing</span>
+                        <h3 class="work-card__title">Why We Collect User’s Data</h3>
+                        <a class="work-card__link" href="#" aria-label="Read more about Why We Collect User’s Data">
+                            <span>Read more</span>
+                            <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="work-card work-card--featured">
+                    <div class="work-card__media" aria-hidden="true"></div>
+                    <div class="work-card__content">
+                        <span class="work-card__tag">User testing</span>
+                        <h3 class="work-card__title">Creative landing page</h3>
+                        <a class="work-card__link" href="#" aria-label="Read more about User testing case study">
+                            <span>Read more</span>
+                            <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="work-card">
+                    <div class="work-card__content">
+                        <span class="work-card__tag">SEO</span>
+                        <h3 class="work-card__title">How We Optimized Our SEO</h3>
+                        <a class="work-card__link" href="#" aria-label="Read more about How We Optimized Our SEO">
+                            <span>Read more</span>
+                            <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="container testimonials__container">
+            <div class="testimonials__header">
+                <h2 class="testimonials__title" id="testimonials-title">Hear what our customers say :)</h2>
+
+                <div class="testimonials__controls">
+                    <button class="testimonials__control" type="button" aria-label="Previous testimonial" data-slider-prev>
+                        <img src="img/icons/ui/slider-prev.svg" alt="" aria-hidden="true">
+                    </button>
+                    <button class="testimonials__control" type="button" aria-label="Next testimonial" data-slider-next>
+                        <img src="img/icons/ui/slider-next.svg" alt="" aria-hidden="true">
+                    </button>
+                </div>
+            </div>
+
+            <div class="testimonials__viewport" data-slider>
+                <ul class="testimonials__list">
+                    <li class="testimonial-card">
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="img/avatars/brooklyn-simmons.jpg" alt="Brooklyn Simmons">
+                            <div>
+                                <h3 class="testimonial-card__name">Brooklyn Simmons</h3>
+                                <p class="testimonial-card__company">manam</p>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            Sit ut diam bibendum dolor. Ullamcorper pharetra nibh eget vitae pulvinar. Placerat sapien,
+                            dolor, aenean vivamus in tincidunt et. Mauris dolor vestibulum et lacus a ante orci.
+                        </blockquote>
+                    </li>
+
+                    <li class="testimonial-card">
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="img/avatars/esther-howard.jpg" alt="Esther Howard">
+                            <div>
+                                <h3 class="testimonial-card__name">Esther Howard</h3>
+                                <p class="testimonial-card__company">Offmax</p>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            Vitae tellus bibendum nibh integer auctor pretium sed. Sollicitudin tristique euismod elit.
+                        </blockquote>
+                    </li>
+
+                    <li class="testimonial-card">
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="img/avatars/arlene-mccoy.jpg" alt="Arlene McCoy">
+                            <div>
+                                <h3 class="testimonial-card__name">Arlene McCoy</h3>
+                                <p class="testimonial-card__company">bloopixel</p>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            Eu eu eget lorem commodo sagittis enim in viverra. Urna egestas ipsum gravida tempor.
+                            Libero, consectetur urna in enim magnis. Est.
+                        </blockquote>
+                    </li>
+
+                    <li class="testimonial-card">
+                        <div class="testimonial-card__author">
+                            <img class="testimonial-card__avatar" src="img/avatars/jane-cooper.jpg" alt="Jane Cooper">
+                            <div>
+                                <h3 class="testimonial-card__name">Jane Cooper</h3>
+                                <p class="testimonial-card__company">unpexel</p>
+                            </div>
+                        </div>
+                        <blockquote class="testimonial-card__quote">
+                            Amet aliquam, volutpat nisl, duis sed at. Vehicula proin consectetur risus dictumst nec amet
+                            consequat at tempus. Ornare dapibus nunc fames nibh morbi viverra eu sed mattis.
+                        </blockquote>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container contact__container">
+            <div class="contact__panel">
+                <div class="contact__content">
+                    <div class="contact__copy">
+                        <h2 class="section-heading contact__title" id="contact-title">Let’s discuss the idea</h2>
+                        <p class="section-copy contact__description">
+                            Risus commodo id odio turpis pharetra elementum. Pulvinar porta porta feugiat scelerisque in elit.
+                        </p>
+                    </div>
+
+                    <form class="contact__form" action="#" method="post">
+                        <label class="visually-hidden" for="contact-email">Your email</label>
+                        <input class="field field--light contact__input" id="contact-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+                        <button class="button button--dark contact__submit" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+
+            <a class="button button--outline contact__to-top" href="#top">Go to top</a>
+        </div>
+    </section>
 </main>
+
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="footer__main">
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Company</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="about.html">About us</a></li>
+                        <li><a class="footer__link" href="about.html#team">Team</a></li>
+                        <li><a class="footer__link" href="#contact">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Services</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="#services">Branding</a></li>
+                        <li><a class="footer__link" href="#services">Web development</a></li>
+                        <li><a class="footer__link" href="#services">Digital marketing</a></li>
+                        <li><a class="footer__link" href="#services">Mobile app</a></li>
+                        <li><a class="footer__link" href="#services">SEO</a></li>
+                        <li><a class="footer__link" href="#services">User testing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Resources</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="#resources">Blog</a></li>
+                        <li><a class="footer__link" href="#resources">Case study</a></li>
+                        <li><a class="footer__link" href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Follow us</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="#" rel="noopener">Instagram</a></li>
+                        <li><a class="footer__link" href="https://www.figma.com/" rel="noopener">Figma</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="footer__subscribe">
+                <a class="footer__logo" href="index.html" aria-label="Shadient.co — Home">
+                    <img class="footer__logo-image" src="img/logo-mark.svg" alt="" aria-hidden="true">
+                    <span>Shadient.co</span>
+                </a>
+                <p class="footer__subscribe-label">Get latest updates</p>
+                <form class="footer__form" action="#" method="post">
+                    <label class="visually-hidden" for="footer-email">Your email</label>
+                    <input class="field field--compact footer__input" id="footer-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+                    <button class="visually-hidden" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <p class="footer__copyright">Created by Shadient.co</p>
+    </div>
+</footer>
 
 
 <script src="js/script.js"></script>
