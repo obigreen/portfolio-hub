@@ -4,6 +4,10 @@ tokens
 base
 utilities
 shared-components
+page-hero
+content-block
+service-card
+work-card
 header
 footer
 */
@@ -210,6 +214,222 @@ img {
     border-width: 1px;
     color: var(--color-text);
     background-color: transparent;
+}
+
+/* page-hero */
+
+.page-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 640px;
+    overflow: hidden;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+}
+
+.page-hero__decor {
+    position: absolute;
+    z-index: -1;
+    max-width: none;
+    pointer-events: none;
+    user-select: none;
+}
+
+.page-hero__decor--grid {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 868px;
+}
+
+.page-hero__decor--glow-left,
+.page-hero__decor--glow-left-alt {
+    left: -352px;
+    width: 788px;
+    height: 649px;
+    transform: rotate(177.33deg);
+}
+
+.page-hero__decor--glow-left {
+    top: 293px;
+}
+
+.page-hero__decor--glow-left-alt {
+    top: 311px;
+}
+
+.page-hero__decor--glow-right {
+    top: -266px;
+    right: -228px;
+    width: 652px;
+    height: 897px;
+}
+
+.page-hero__container {
+    display: flex;
+    align-items: center;
+    min-height: inherit;
+}
+
+.page-hero__content,
+.page-hero__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.page-hero__content {
+    gap: 32px;
+    width: min(100%, 523px);
+}
+
+.page-hero__copy {
+    gap: 16px;
+}
+
+.page-hero__eyebrow {
+    color: var(--color-accent);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.page-hero__title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 80px;
+}
+
+.page-hero__action {
+    min-height: 42px;
+}
+
+/* content-block */
+
+.content-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: min(100%, 971px);
+}
+
+.content-block__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 56px;
+}
+
+.content-block__text {
+    width: min(100%, 956px);
+}
+
+/* service-card */
+
+.service-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.service-card__icon {
+    width: 48px;
+    height: 48px;
+}
+
+.service-card__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.service-card__description {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+}
+
+.service-card__title-link,
+.work-card__link {
+    transition: color 0.2s ease;
+}
+
+.service-card__title-link:hover,
+.work-card__link:hover {
+    color: var(--color-accent);
+}
+
+/* work-card */
+
+.work-card {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-surface);
+}
+
+.work-card--featured {
+    gap: 24px;
+}
+
+.work-card__media {
+    width: 100%;
+    aspect-ratio: 365 / 142;
+    border-radius: 4px;
+    background-color: #8474c4;
+}
+
+.work-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.work-card__tag {
+    padding: 4px 8px;
+    color: #1a365d;
+    background-color: var(--color-accent);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.work-card__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.work-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #728095;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+}
+
+.work-card__link img {
+    width: 20px;
+    height: 20px;
+}
+
+.service-card__title-link:focus-visible,
+.work-card__link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
 }
 
 /* header */
@@ -429,7 +649,10 @@ img {
     height: 42px;
 }
 
-.footer__form,
+.footer__form {
+    width: min(100%, 260px);
+}
+
 .footer__input {
     width: 100%;
 }

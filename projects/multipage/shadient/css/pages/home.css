@@ -257,8 +257,7 @@ contact-section
 }
 
 .services__container,
-.services__intro,
-.services__item {
+.services__intro {
     display: flex;
     flex-direction: column;
 }
@@ -284,33 +283,6 @@ contact-section
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 40px 32px;
     width: min(100%, 1078px);
-}
-
-.services__item {
-    gap: 12px;
-    min-width: 0;
-    padding: 20px;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.services__icon {
-    width: 48px;
-    height: 48px;
-}
-
-.services__item-title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 36px;
-}
-
-.services__item-description {
-    color: var(--color-text-muted);
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.02em;
 }
 
 /* why-choose-section */
@@ -418,75 +390,14 @@ contact-section
     column-gap: 32px;
 }
 
-.work-card {
+.work__list .work-card {
     display: inline-flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 24px;
     margin-bottom: 32px;
     break-inside: avoid;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    background-color: var(--color-surface);
 }
 
-.work-card:nth-child(3n) {
+.work__list .work-card:nth-child(3n) {
     margin-bottom: 0;
-}
-
-.work-card--featured {
-    gap: 24px;
-}
-
-.work-card__media {
-    width: 100%;
-    aspect-ratio: 365 / 142;
-    border-radius: 4px;
-    background-color: #8474c4;
-}
-
-.work-card__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.work-card__tag {
-    padding: 4px 8px;
-    color: #1a365d;
-    background-color: var(--color-accent);
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 16px;
-    text-transform: uppercase;
-}
-
-.work-card__title {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-}
-
-.work-card__link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: #728095;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0.02em;
-    transition: color 0.2s ease;
-}
-
-.work-card__link img {
-    width: 20px;
-    height: 20px;
-}
-
-.work-card__link:hover {
-    color: var(--color-accent);
 }
 
 /* testimonials-section */

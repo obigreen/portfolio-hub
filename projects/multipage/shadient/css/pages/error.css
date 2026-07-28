@@ -1,0 +1,22 @@
+/*
+error-page
+error-responsive
+*/
+
+/* error-page */
+
+.page-hero.error-hero {
+    min-height: max(640px, 100svh);
+}
+
+.error-hero__description {
+    width: min(100%, 500px);
+}
+
+/* error-responsive */
+
+@media (max-width: 480px) {
+    .error-hero__title {
+        font-size: clamp(40px, 13vw, 46px);
+    }
+}
