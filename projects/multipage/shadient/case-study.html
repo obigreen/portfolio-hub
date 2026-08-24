@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shadient.co project case study">
+    <title>Case Study — Shadient.co</title>
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/case-study.css">
+    <link rel="stylesheet" href="css/adaptive.css">
+</head>
+<body id="top">
+
+<header class="header">
+    <div class="container header__container">
+        <a href="index.html" class="header__logo" aria-label="Shadient.co — Home">
+            <img src="img/logo-mark.svg" alt="" class="header__logo-image" aria-hidden="true">
+            <span class="header__logo-text">Shadient.co</span>
+        </a>
+
+        <nav class="header__nav" id="primary-navigation" aria-label="Primary navigation" data-menu>
+            <ul class="header__list">
+                <li class="header__list-item">
+                    <a href="about.html" class="header__list-link header__list-link--with-icon">
+                        <span>Company</span>
+                        <img src="img/icons/chevron-down.svg" alt="" class="header__list-icon" aria-hidden="true">
+                    </a>
+                </li>
+                <li class="header__list-item">
+                    <a href="service.html" class="header__list-link">Services</a>
+                </li>
+                <li class="header__list-item">
+                    <a href="index.html#resources" class="header__list-link">Resources</a>
+                </li>
+                <li class="header__list-item header__list-item--contact">
+                    <a href="index.html#contact" class="button button--outline button--compact header__contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <button class="header__menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>
+            <span class="header__menu-icon" aria-hidden="true">Menu</span>
+        </button>
+    </div>
+</header>
+
+<main class="main case-study" data-project-page aria-busy="true">
+    <section class="page-hero case-study__hero" aria-labelledby="case-study-title">
+        <img class="page-hero__decor page-hero__decor--grid" src="img/decor/about-grid.svg" alt="" aria-hidden="true">
+        <img class="page-hero__decor page-hero__decor--glow-left" src="img/decor/about-glow-left.svg" alt="" aria-hidden="true">
+        <img class="page-hero__decor page-hero__decor--glow-left-alt" src="img/decor/about-glow-left.svg" alt="" aria-hidden="true">
+        <img class="page-hero__decor page-hero__decor--glow-right" src="img/decor/about-glow-right.svg" alt="" aria-hidden="true">
+
+        <div class="container page-hero__container">
+            <div class="page-hero__content case-study__hero-content">
+                <div class="page-hero__copy">
+                    <p class="page-hero__eyebrow" data-project-category>Case study</p>
+                    <h1 class="page-hero__title" id="case-study-title" data-project-title>Loading project…</h1>
+                    <p class="section-copy page-hero__description" data-project-summary>
+                        The project details are being prepared.
+                    </p>
+                </div>
+
+                <a class="button button--primary page-hero__action" href="index.html#resources" data-project-back>Back to work</a>
+            </div>
+        </div>
+    </section>
+
+    <div data-project-content hidden>
+        <section class="case-study__showcase" aria-label="Project preview">
+            <div class="container">
+                <div class="case-study__media" data-project-media role="img" aria-label="Project preview"></div>
+            </div>
+        </section>
+
+        <section class="case-study__overview" aria-labelledby="case-study-overview-title">
+            <div class="container case-study__overview-layout">
+                <article class="content-block case-study__overview-copy">
+                    <h2 class="content-block__title" id="case-study-overview-title">Overview</h2>
+                    <p class="section-copy content-block__text" data-project-overview></p>
+                </article>
+
+                <aside class="case-study__facts" aria-label="Project facts">
+                    <dl class="case-study__facts-list">
+                        <div class="case-study__fact">
+                            <dt class="case-study__fact-label">Category</dt>
+                            <dd class="case-study__fact-value" data-project-fact-category></dd>
+                        </div>
+                        <div class="case-study__fact">
+                            <dt class="case-study__fact-label">Timeline</dt>
+                            <dd class="case-study__fact-value" data-project-timeline></dd>
+                        </div>
+                        <div class="case-study__fact">
+                            <dt class="case-study__fact-label">Deliverables</dt>
+                            <dd class="case-study__fact-value">
+                                <ul class="case-study__deliverables" data-project-deliverables></ul>
+                            </dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <section class="case-study__details" aria-label="Project approach">
+            <div class="container case-study__details-grid">
+                <article class="case-study__detail">
+                    <p class="case-study__detail-number" aria-hidden="true">01</p>
+                    <h2 class="case-study__detail-title">Challenge</h2>
+                    <p class="section-copy" data-project-challenge></p>
+                </article>
+
+                <article class="case-study__detail">
+                    <p class="case-study__detail-number" aria-hidden="true">02</p>
+                    <h2 class="case-study__detail-title">Solution</h2>
+                    <p class="section-copy" data-project-solution></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="case-study__results" aria-labelledby="case-study-results-title">
+            <div class="container case-study__results-container">
+                <h2 class="section-heading" id="case-study-results-title">Project outcomes</h2>
+                <ol class="case-study__results-list" data-project-results></ol>
+                <a class="button button--outline case-study__all-work-link" href="index.html#resources">Back to all work</a>
+            </div>
+        </section>
+    </div>
+
+    <noscript>
+        <div class="container case-study__noscript">
+            JavaScript is required to load this case study. Please return to the project list.
+        </div>
+    </noscript>
+</main>
+
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="footer__main">
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Company</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="about.html">About us</a></li>
+                        <li><a class="footer__link" href="about.html#team">Team</a></li>
+                        <li><a class="footer__link" href="index.html#contact">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Services</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="service.html">Branding</a></li>
+                        <li><a class="footer__link" href="index.html#services">Web development</a></li>
+                        <li><a class="footer__link" href="index.html#services">Digital marketing</a></li>
+                        <li><a class="footer__link" href="index.html#services">Mobile app</a></li>
+                        <li><a class="footer__link" href="index.html#services">SEO</a></li>
+                        <li><a class="footer__link" href="index.html#services">User testing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Resources</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="index.html#resources">Blog</a></li>
+                        <li><a class="footer__link" href="index.html#resources">Case study</a></li>
+                        <li><a class="footer__link" href="index.html#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h2 class="footer__column-title">Follow us</h2>
+                    <ul class="footer__list">
+                        <li><a class="footer__link" href="#" rel="noopener">Instagram</a></li>
+                        <li><a class="footer__link" href="https://www.figma.com/" rel="noopener">Figma</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="footer__subscribe">
+                <a class="footer__logo" href="index.html" aria-label="Shadient.co — Home">
+                    <img class="footer__logo-image" src="img/logo-mark.svg" alt="" aria-hidden="true">
+                    <span>Shadient.co</span>
+                </a>
+                <p class="footer__subscribe-label">Get latest updates</p>
+                <form class="footer__form" action="#" method="post">
+                    <label class="visually-hidden" for="case-study-footer-email">Your email</label>
+                    <input class="field field--compact footer__input" id="case-study-footer-email" name="email" type="email" placeholder="Your email" autocomplete="email" required>
+                    <button class="visually-hidden" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <p class="footer__copyright">Created by Shadient.co</p>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/case-study.js"></script>
+</body>
+</html>

@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadient</title>
     <link rel="icon" href="favicon.ico" sizes="any">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pages/home.css">
-    <link rel="stylesheet" href="css/adaptive.css">
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1.0">
+    <link rel="stylesheet" href="css/pages/home.css?v=1.1.0">
+    <link rel="stylesheet" href="css/adaptive.css?v=1.1.0">
 </head>
 <body id="top">
 
@@ -283,7 +284,7 @@
                     <div class="work-card__content">
                         <span class="work-card__tag">Website</span>
                         <h3 class="work-card__title">Creative landing page</h3>
-                        <a class="work-card__link" href="#" aria-label="Read more about Creative landing page">
+                        <a class="work-card__link" href="case-study.html?project=creative-landing-page" aria-label="Read more about Creative landing page">
                             <span>Read more</span>
                             <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
                         </a>
@@ -294,7 +295,7 @@
                     <div class="work-card__content">
                         <span class="work-card__tag">Branding</span>
                         <h3 class="work-card__title">Creative Branding</h3>
-                        <a class="work-card__link" href="#" aria-label="Read more about Creative Branding">
+                        <a class="work-card__link" href="case-study.html?project=creative-branding" aria-label="Read more about Creative Branding">
                             <span>Read more</span>
                             <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
                         </a>
@@ -305,7 +306,7 @@
                     <div class="work-card__content">
                         <span class="work-card__tag">Development</span>
                         <h3 class="work-card__title">Automation. Advanced Level</h3>
-                        <a class="work-card__link" href="#" aria-label="Read more about Automation. Advanced Level">
+                        <a class="work-card__link" href="case-study.html?project=automation-advanced-level" aria-label="Read more about Automation. Advanced Level">
                             <span>Read more</span>
                             <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
                         </a>
@@ -316,7 +317,7 @@
                     <div class="work-card__content">
                         <span class="work-card__tag">Digital marketing</span>
                         <h3 class="work-card__title">Why We Collect User’s Data</h3>
-                        <a class="work-card__link" href="#" aria-label="Read more about Why We Collect User’s Data">
+                        <a class="work-card__link" href="case-study.html?project=user-data-research" aria-label="Read more about Why We Collect User’s Data">
                             <span>Read more</span>
                             <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
                         </a>
@@ -328,7 +329,7 @@
                     <div class="work-card__content">
                         <span class="work-card__tag">User testing</span>
                         <h3 class="work-card__title">Creative landing page</h3>
-                        <a class="work-card__link" href="#" aria-label="Read more about User testing case study">
+                        <a class="work-card__link" href="case-study.html?project=usability-landing-page" aria-label="Read more about User testing case study">
                             <span>Read more</span>
                             <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
                         </a>
@@ -339,7 +340,7 @@
                     <div class="work-card__content">
                         <span class="work-card__tag">SEO</span>
                         <h3 class="work-card__title">How We Optimized Our SEO</h3>
-                        <a class="work-card__link" href="#" aria-label="Read more about How We Optimized Our SEO">
+                        <a class="work-card__link" href="case-study.html?project=seo-optimization" aria-label="Read more about How We Optimized Our SEO">
                             <span>Read more</span>
                             <img src="img/icons/ui/arrow-circle-right.svg" alt="" aria-hidden="true">
                         </a>
@@ -355,18 +356,18 @@
                 <h2 class="testimonials__title" id="testimonials-title">Hear what our customers say :)</h2>
 
                 <div class="testimonials__controls">
-                    <button class="testimonials__control" type="button" aria-label="Previous testimonial" data-slider-prev>
+                    <button class="testimonials__control" type="button" aria-label="Previous testimonial" aria-controls="testimonials-track" data-slider-prev>
                         <img src="img/icons/ui/slider-prev.svg" alt="" aria-hidden="true">
                     </button>
-                    <button class="testimonials__control" type="button" aria-label="Next testimonial" data-slider-next>
+                    <button class="testimonials__control" type="button" aria-label="Next testimonial" aria-controls="testimonials-track" data-slider-next>
                         <img src="img/icons/ui/slider-next.svg" alt="" aria-hidden="true">
                     </button>
                 </div>
             </div>
 
-            <div class="testimonials__viewport" data-slider>
-                <ul class="testimonials__list">
-                    <li class="testimonial-card">
+            <div class="testimonials__viewport swiper" role="region" aria-label="Customer testimonials" data-slider>
+                <ul class="testimonials__list swiper-wrapper" id="testimonials-track">
+                    <li class="testimonial-card swiper-slide">
                         <div class="testimonial-card__author">
                             <img class="testimonial-card__avatar" src="img/avatars/brooklyn-simmons.jpg" alt="Brooklyn Simmons">
                             <div>
@@ -380,7 +381,7 @@
                         </blockquote>
                     </li>
 
-                    <li class="testimonial-card">
+                    <li class="testimonial-card swiper-slide">
                         <div class="testimonial-card__author">
                             <img class="testimonial-card__avatar" src="img/avatars/esther-howard.jpg" alt="Esther Howard">
                             <div>
@@ -393,7 +394,7 @@
                         </blockquote>
                     </li>
 
-                    <li class="testimonial-card">
+                    <li class="testimonial-card swiper-slide">
                         <div class="testimonial-card__author">
                             <img class="testimonial-card__avatar" src="img/avatars/arlene-mccoy.jpg" alt="Arlene McCoy">
                             <div>
@@ -407,7 +408,7 @@
                         </blockquote>
                     </li>
 
-                    <li class="testimonial-card">
+                    <li class="testimonial-card swiper-slide">
                         <div class="testimonial-card__author">
                             <img class="testimonial-card__avatar" src="img/avatars/jane-cooper.jpg" alt="Jane Cooper">
                             <div>
@@ -511,6 +512,7 @@
 </footer>
 
 
-<script src="js/script.js"></script>
+<script src="vendor/swiper/swiper-bundle.min.js"></script>
+<script src="js/script.js?v=1.1.0"></script>
 </body>
 </html>

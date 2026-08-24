@@ -172,13 +172,13 @@ contact-section
     justify-content: center;
     height: 72px;
     padding: 16px 24px;
-    border: 1px solid var(--color-border);
     border-radius: 10px;
+    box-shadow: inset 0 0 0 1px var(--color-border);
 }
 
 .trusted__card--filled {
-    border-color: transparent;
     background-color: var(--color-surface-soft);
+    box-shadow: none;
 }
 
 .trusted__logo,
@@ -460,19 +460,14 @@ contact-section
 }
 
 .testimonials__viewport {
+    width: 100%;
+    min-width: 0;
     overflow: hidden;
-}
-
-.testimonials__list {
-    display: flex;
-    gap: 24px;
-    transition: transform 0.35s ease;
-    will-change: transform;
 }
 
 .testimonial-card {
     display: flex;
-    flex: 0 0 calc((100% - 72px) / 4);
+    height: auto;
     flex-direction: column;
     justify-content: center;
     gap: 16px;

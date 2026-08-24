@@ -67,10 +67,6 @@ mobile-small
         columns: 2 340px;
     }
 
-    .testimonial-card {
-        flex-basis: calc((100% - 24px) / 2);
-    }
-
     .footer__main {
         grid-template-columns: 1fr;
     }
@@ -308,7 +304,6 @@ mobile-small
     }
 
     .testimonial-card {
-        flex-basis: min(86%, 360px);
         min-height: 246px;
     }
 
@@ -429,7 +424,6 @@ mobile-small
     }
 
     .testimonial-card {
-        flex-basis: 92%;
         padding: 20px;
     }
 

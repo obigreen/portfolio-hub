@@ -1,0 +1,136 @@
+{
+    "projects": [
+        {
+            "slug": "creative-landing-page",
+            "category": "Website",
+            "title": "Creative landing page",
+            "summary": "A focused landing experience that turns a complex offer into a clear path from first impression to conversion.",
+            "overview": "The client needed a flexible campaign page that could support changing messages without losing visual consistency. We created a modular system of content sections, reusable calls to action, and a strong visual rhythm that keeps the product story easy to follow.",
+            "challenge": "The original communication mixed several audiences and priorities on a single screen. Important benefits were competing for attention, while the conversion path became unclear after the hero section.",
+            "solution": "We reorganized the story around one primary action, introduced reusable page modules, and built a responsive hierarchy that remains readable from wide desktop screens down to compact mobile devices.",
+            "deliverables": [
+                "Content architecture",
+                "Responsive interface",
+                "Reusable UI components",
+                "Conversion flow"
+            ],
+            "timeline": "4 weeks",
+            "results": [
+                "Clearer product positioning",
+                "Shorter path to the primary action",
+                "Reusable structure for future campaigns"
+            ],
+            "accent": "#8474c4"
+        },
+        {
+            "slug": "creative-branding",
+            "category": "Branding",
+            "title": "Creative Branding",
+            "summary": "A practical brand system designed to stay recognizable across digital products, campaigns, and everyday communication.",
+            "overview": "The project began with a fragmented visual language and no shared rules for new materials. We shaped a compact identity system that gives the team enough structure for consistency without limiting future creative work.",
+            "challenge": "Different teams were producing visuals independently, which caused inconsistent typography, color usage, and messaging. The brand needed one clear foundation that could scale.",
+            "solution": "We defined the brand direction, established a flexible color and typography system, and documented repeatable patterns for social, web, and product communication.",
+            "deliverables": [
+                "Brand strategy",
+                "Visual identity",
+                "Digital guidelines",
+                "Campaign templates"
+            ],
+            "timeline": "5 weeks",
+            "results": [
+                "Consistent visual language",
+                "Faster production of new materials",
+                "A scalable foundation for digital channels"
+            ],
+            "accent": "#8b75d1"
+        },
+        {
+            "slug": "automation-advanced-level",
+            "category": "Development",
+            "title": "Automation. Advanced Level",
+            "summary": "A maintainable automation workflow that removes repetitive operations and keeps important business processes observable.",
+            "overview": "The client relied on several manual handoffs between services. We designed a reliable workflow with explicit states, validation, and recovery paths so routine operations could run without constant supervision.",
+            "challenge": "Manual data transfer was slow and error-prone, while failed operations were difficult to trace. The solution had to remain understandable for the internal team.",
+            "solution": "We introduced a modular integration layer, isolated external dependencies, and added clear logging and retry rules for every critical step.",
+            "deliverables": [
+                "Workflow architecture",
+                "Service integrations",
+                "Validation rules",
+                "Operational documentation"
+            ],
+            "timeline": "6 weeks",
+            "results": [
+                "Reduced repetitive manual work",
+                "Predictable error recovery",
+                "Simpler maintenance and extension"
+            ],
+            "accent": "#7765bd"
+        },
+        {
+            "slug": "user-data-research",
+            "category": "Digital marketing",
+            "title": "Why We Collect User’s Data",
+            "summary": "A transparent communication framework that explains how customer data improves the product without hiding behind legal language.",
+            "overview": "The task was to turn a sensitive topic into a clear and useful part of the customer experience. We connected research, content, and interface decisions into one understandable story.",
+            "challenge": "Users saw data requests without enough context, which reduced trust and completion rates. Existing explanations were technically correct but difficult to scan.",
+            "solution": "We mapped every data request to a visible user benefit, simplified the language, and designed progressive explanations that appear at the moment they are needed.",
+            "deliverables": [
+                "User research",
+                "Content strategy",
+                "Consent flow",
+                "Campaign materials"
+            ],
+            "timeline": "3 weeks",
+            "results": [
+                "More transparent communication",
+                "Improved confidence in consent flows",
+                "Reusable messaging principles"
+            ],
+            "accent": "#927ed8"
+        },
+        {
+            "slug": "usability-landing-page",
+            "category": "User testing",
+            "title": "Creative landing page",
+            "summary": "A landing page refined through usability testing, with clearer decisions, stronger hierarchy, and fewer points of hesitation.",
+            "overview": "We tested the campaign experience with representative users before development was finalized. Observed behavior revealed where the interface and copy created unnecessary uncertainty.",
+            "challenge": "The page looked complete, but users were missing key proof points and hesitating before the main action. Analytics alone could not explain why.",
+            "solution": "We combined moderated sessions with task-based testing, prioritized the findings, and iterated the layout and copy around the most frequent problems.",
+            "deliverables": [
+                "Research plan",
+                "Usability sessions",
+                "Prioritized findings",
+                "Validated design updates"
+            ],
+            "timeline": "3 weeks",
+            "results": [
+                "Fewer usability blockers",
+                "Stronger CTA comprehension",
+                "Evidence-based design decisions"
+            ],
+            "accent": "#8474c4"
+        },
+        {
+            "slug": "seo-optimization",
+            "category": "SEO",
+            "title": "How We Optimized Our SEO",
+            "summary": "A technical and editorial SEO system built around discoverability, useful content, and maintainable publishing workflows.",
+            "overview": "The site had valuable material but inconsistent structure and weak search visibility. We aligned technical improvements with a content model the team could continue using after launch.",
+            "challenge": "Important pages were difficult for search engines to understand, while overlapping topics competed with each other. Publishing new content also required too many manual decisions.",
+            "solution": "We improved semantic structure, consolidated topic clusters, defined reusable metadata rules, and created a repeatable publishing checklist.",
+            "deliverables": [
+                "Technical audit",
+                "Information architecture",
+                "Content recommendations",
+                "Measurement framework"
+            ],
+            "timeline": "5 weeks",
+            "results": [
+                "Cleaner crawl structure",
+                "More focused topic coverage",
+                "Repeatable SEO publishing process"
+            ],
+            "accent": "#7160b5"
+        }
+    ]
+}

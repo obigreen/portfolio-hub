@@ -104,45 +104,94 @@ if (menuToggle && menu) {
     });
 }
 
-document.querySelectorAll(".testimonials").forEach((sliderSection) => {
-    const viewport = sliderSection.querySelector("[data-slider]");
-    const track = viewport?.querySelector(".testimonials__list");
-    const cards = track ? [...track.children] : [];
-    const previousButton = sliderSection.querySelector("[data-slider-prev]");
-    const nextButton = sliderSection.querySelector("[data-slider-next]");
+const duplicateSlidesForLoop = (track, minimumSlides) => {
+    const sourceSlides = [...track.children];
 
-    if (!viewport || !track || cards.length === 0 || !previousButton || !nextButton) {
+    if (sourceSlides.length === 0) {
         return;
     }
 
-    let currentIndex = 0;
-    const getVisibleCardCount = () => {
-        const trackStyles = getComputedStyle(track);
-        const gap = Number.parseFloat(trackStyles.columnGap) || 0;
-        const cardWidth = cards[0].getBoundingClientRect().width;
+    while (track.children.length < minimumSlides) {
+        const clones = sourceSlides.map((slide) => {
+            const clone = slide.cloneNode(true);
+            clone.setAttribute("aria-hidden", "true");
+            clone.querySelectorAll("img").forEach((image) => image.setAttribute("alt", ""));
+            return clone;
+        });
 
-        return Math.max(1, Math.floor((viewport.clientWidth + gap) / (cardWidth + gap)));
-    };
+        track.append(...clones);
+    }
+};
 
-    const getLastIndex = () => Math.max(0, cards.length - getVisibleCardCount());
+document.querySelectorAll(".testimonials").forEach((sliderSection) => {
+    const slider = sliderSection.querySelector("[data-slider]");
+    const track = slider?.querySelector(".swiper-wrapper");
+    const previousButton = sliderSection.querySelector("[data-slider-prev]");
+    const nextButton = sliderSection.querySelector("[data-slider-next]");
 
-    const renderSlider = () => {
-        currentIndex = Math.min(currentIndex, getLastIndex());
-        track.style.transform = `translate3d(-${cards[currentIndex].offsetLeft}px, 0, 0)`;
-    };
+    if (!slider || !track || !previousButton || !nextButton || typeof Swiper === "undefined") {
+        return;
+    }
 
-    previousButton.addEventListener("click", () => {
-        const lastIndex = getLastIndex();
-        currentIndex = currentIndex <= 0 ? lastIndex : currentIndex - 1;
-        renderSlider();
+    const maximumVisibleSlides = 4;
+    duplicateSlidesForLoop(track, maximumVisibleSlides + 1);
+
+    const testimonialSlider = new Swiper(slider, {
+        a11y: {
+            enabled: true,
+            nextSlideMessage: "Next testimonial",
+            prevSlideMessage: "Previous testimonial",
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            480: {
+                slidesPerView: 1.5,
+            },
+            769: {
+                slidesPerView: 2,
+            },
+            1025: {
+                slidesPerView: maximumVisibleSlides,
+            },
+        },
+        grabCursor: true,
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+        },
+        loop: true,
+        navigation: {
+            addIcons: false,
+            nextEl: nextButton,
+            prevEl: previousButton,
+        },
+        slidesPerGroup: 1,
+        slidesPerView: 1,
+        spaceBetween: 24,
+        speed: 500,
     });
 
-    nextButton.addEventListener("click", () => {
-        const lastIndex = getLastIndex();
-        currentIndex = currentIndex >= lastIndex ? 0 : currentIndex + 1;
-        renderSlider();
-    });
+    const mobileAutoplayMedia = window.matchMedia("(max-width: 479px)");
+    const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-    observeElementResize([viewport], renderSlider);
-    renderSlider();
+    const updateAutoplay = () => {
+        const shouldAutoplay = mobileAutoplayMedia.matches && !reducedMotionMedia.matches;
+
+        if (shouldAutoplay && !testimonialSlider.autoplay.running) {
+            testimonialSlider.autoplay.start();
+        } else if (!shouldAutoplay && testimonialSlider.autoplay.running) {
+            testimonialSlider.autoplay.stop();
+        }
+    };
+
+    mobileAutoplayMedia.addEventListener("change", updateAutoplay);
+    reducedMotionMedia.addEventListener("change", updateAutoplay);
+    updateAutoplay();
 });
