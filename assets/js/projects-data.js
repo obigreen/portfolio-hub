@@ -90,7 +90,7 @@ window.PORTFOLIO_HUB_DATA = {
                 'Gulp',
             ],
             status: 'live',
-            demoUrl: './projects/landings/slimRush/dist/',
+            demoUrl: './projects/landings/slimRush/',
             // liveUrl — https://vitacall.ru/
         },
     ],
