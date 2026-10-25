@@ -74,5 +74,24 @@ window.PORTFOLIO_HUB_DATA = {
             demoUrl: './projects/multipage/shadient/',
             // liveUrl — https://vitacall.ru/
         },
+
+        {
+            id: 'slimRush',
+            title: 'Slim Rush',
+            categories: ['landings'],
+            type: 'Multipage landing',
+            description:
+                'Адаптивный figma lending',
+            stack: [
+                'HTML5',
+                'CSS3',
+                'JavaScript',
+                'Swiper',
+                'Gulp',
+            ],
+            status: 'live',
+            demoUrl: './projects/landings/slimRush/',
+            // liveUrl — https://vitacall.ru/
+        },
     ],
 };
