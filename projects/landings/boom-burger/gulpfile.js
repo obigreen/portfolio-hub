@@ -3,12 +3,12 @@
 const {rmSync} = require('node:fs');
 const {src, dest, watch, series, parallel} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 
 const paths = {
     styles: 'src/styles/**/*.scss',
     styleEntry: 'src/styles/main.scss',
-    jquery: 'node_modules/jquery/dist/jquery.min.js',
     slickRoot: 'node_modules/slick-carousel/slick',
     dist: 'dist',
 };
@@ -20,7 +20,8 @@ function clean(done) {
 
 function styles() {
     return src(paths.styleEntry)
-        .pipe(sass.sync({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass.sync({style: 'expanded'}).on('error', sass.logError))
+        .pipe(cleanCss({level: 2}))
         .pipe(rename('style.min.css'))
         .pipe(dest(paths.dist));
 }
@@ -39,14 +40,7 @@ function slickAssets() {
     ], {base: paths.slickRoot, encoding: false}).pipe(dest(paths.dist));
 }
 
-function vendorScripts() {
-    return src([
-        paths.jquery,
-        `${paths.slickRoot}/slick.min.js`,
-    ]).pipe(dest(paths.dist));
-}
-
-const build = series(clean, parallel(styles, slickStyles, slickAssets, vendorScripts));
+const build = series(clean, parallel(styles, slickStyles, slickAssets));
 
 function dev() {
     return watch(paths.styles, styles);
