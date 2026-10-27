@@ -1,0 +1,51 @@
+@font-face {
+  font-family: TrebuchetMS-Regular;
+  src: url("../src/fonts/TrebuchetMS.woff");
+}
+@font-face {
+  font-family: TrebuchetMS-Bold;
+  src: url("../src/fonts/TrebuchetMS-Bold.woff");
+}
+@font-face {
+  font-family: Formular-Bold;
+  src: url("../src/fonts/Formular-Bold.woff");
+}
+@mixin section-title {
+  font-family: Formular-Bold, sans-serif;
+  font-size: 36px;
+  color: $main-text-color;
+  font-weight: bold;
+  line-height: 1.333;
+  text-align: center;
+}
+@mixin section-text {
+  font-size: 14px;
+  font-family: TrebuchetMS-Regular, sans-serif;
+  color: $main-text-color;
+  line-height: 1.214;
+  text-align: center;
+}
+@mixin button {
+  width: 271px;
+  height: 61px;
+  padding: 22px;
+  font-size: 18px;
+  text-align: center;
+  color: $main-text-color;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-image: -moz-linear-gradient( 17deg, rgb(196,9,0) 0%, rgb(207,69,0) 75%, rgb(218,128,0) 100%);
+  background-image: -webkit-linear-gradient( 17deg, rgb(196,9,0) 0%, rgb(207,69,0) 75%, rgb(218,128,0) 100%);
+  background-image: -ms-linear-gradient( 17deg, rgb(196,9,0) 0%, rgb(207,69,0) 75%, rgb(218,128,0) 100%);
+  transition: .6s;
+
+  &:hover {
+    background-image: -moz-linear-gradient( 17deg, rgb(218,128,0) 0%, rgb(218,128,0) 75%, rgb(218,128,0) 100%);
+    background-image: -webkit-linear-gradient( 17deg, rgb(218,128,0) 0%, rgb(218,128,0) 75%, rgb(218,128,0) 100%);
+    background-image: -ms-linear-gradient( 17deg, rgb(218,128,0) 0%, rgb(218,128,0) 75%, rgb(218,128,0) 100%);
+    box-shadow: 0 5px 9px 1px rgba(131, 52, 13, 0.59);
+    transition: 1s;
+  }
+}
+$main-text-color:  rgb(255, 255, 255);

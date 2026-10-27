@@ -96,5 +96,25 @@ window.PORTFOLIO_HUB_DATA = {
             demoUrl: './projects/landings/slimRush/',
             // liveUrl — https://some.com/
         },
+
+        {
+            id: 'boomBurger',
+            title: 'Boom Burger',
+            categories: ['landings'],
+            type: 'Restaurant landing',
+            description:
+                'Адаптивный лендинг бургерной с меню, акциями, отзывами и формой заказа.',
+            stack: [
+                'HTML5',
+                'CSS3',
+                'SCSS',
+                'JavaScript',
+                'jQuery',
+                'Slick',
+                'Gulp',
+            ],
+            status: 'live',
+            demoUrl: './projects/landings/boom-burger/',
+        },
     ],
 };

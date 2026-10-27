@@ -1,0 +1,23 @@
+{
+  "name": "boom-burger",
+  "version": "1.0.0",
+  "description": "Responsive Boom Burger landing page built with SCSS and Gulp.",
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "dev": "gulp dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.93.2",
+    "slick-carousel": "^1.8.1"
+  }
+}
