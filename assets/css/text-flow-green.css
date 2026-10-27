@@ -1,0 +1,42 @@
+.text-flow-green {
+    color: #55d982;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+    .text-flow-green {
+        background-image: linear-gradient(
+            90deg,
+            #168a55,
+            #2fbd6c,
+            #63e98e,
+            #83ff94,
+            #45d68c,
+            #18a76b,
+            #72efa0,
+            #168a55
+        );
+        background-size: 300% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: text-flow-green 7s ease-in-out infinite;
+    }
+}
+
+@keyframes text-flow-green {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .text-flow-green {
+        animation: none;
+        background-position: 50% 50%;
+    }
+}

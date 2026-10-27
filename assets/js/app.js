@@ -43,25 +43,33 @@ const getProjectUrl = (project) => {
 
 const createProjectRow = (project) => {
     const article = createElement("article", "project-row");
-
     const heading = createElement("div", "project-row__heading");
+    const content = createElement("div", "project-row__content");
+    const stack = createElement("ul", "project-row__stack");
+    const link = createElement("a", "project-row__link", "Открыть ↗");
+    const title = createElement("h2", "project-row__title", project.title);
+
+    if (
+        typeof project.titleClass === "string" &&
+        project.titleClass.trim() !== ""
+    ) {
+        title.classList.add(project.titleClass.trim());
+    }
+
     heading.append(
         createElement("p", "project-row__type", project.type),
-        createElement("h2", "project-row__title", project.title)
+        title
     );
 
-    const content = createElement("div", "project-row__content");
     content.append(
         createElement("p", "project-row__description", project.description)
     );
 
-    const stack = createElement("ul", "project-row__stack");
     project.stack.forEach((technology) => {
         stack.append(createElement("li", "", technology));
     });
     content.append(stack);
 
-    const link = createElement("a", "project-row__link", "Открыть ↗");
     link.href = getProjectUrl(project);
     link.target = "_blank";
     link.rel = "noopener noreferrer";

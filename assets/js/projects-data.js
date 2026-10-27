@@ -14,6 +14,7 @@ window.PORTFOLIO_HUB_DATA = {
         {
             id: 'transmission-driving-school',
             title: 'Transmission Driving School',
+            // titleClass: 'text-flow-green',
             categories: ['landings', 'fullstack'],
             type: 'WordPress landing',
             description:
@@ -38,6 +39,7 @@ window.PORTFOLIO_HUB_DATA = {
         {
             id: 'vitaCall',
             title: 'vitaCall',
+            // titleClass: 'text-flow-green',
             categories: ['landings'],
             type: 'Custom landing',
             description:
@@ -58,6 +60,7 @@ window.PORTFOLIO_HUB_DATA = {
         {
             id: 'shadient',
             title: 'Shadient.co',
+            // titleClass: 'text-flow-green',
             categories: ['landings', 'multipage'],
             type: 'Multipage landing',
             description:
@@ -78,6 +81,7 @@ window.PORTFOLIO_HUB_DATA = {
         {
             id: 'slimRush',
             title: 'Slim Rush',
+            // titleClass: 'text-flow-green',
             categories: ['landings'],
             type: 'Fullscreen slider landing',
             description:
@@ -100,6 +104,7 @@ window.PORTFOLIO_HUB_DATA = {
         {
             id: 'boomBurger',
             title: 'Boom Burger',
+            // titleClass: 'text-flow-green',
             categories: ['landings'],
             type: 'Restaurant landing',
             description:
@@ -115,6 +120,36 @@ window.PORTFOLIO_HUB_DATA = {
             ],
             status: 'live',
             demoUrl: './projects/landings/boom-burger/',
+        },
+
+        {
+            id: 'tavelore',
+            title: 'Tavelore',
+            titleClass: 'text-flow-green',
+            categories: ['applications', 'fullstack'],
+            type: 'Full-stack Web App',
+            description:
+                'Приложение для создания и изучения собственных групп переводных пар. Доступ с российских IP-адресов ограничен из-за размещения на DigitalOcean.',
+            stack: [
+                'React',
+                'TypeScript',
+                'Vite',
+                'Styled Components',
+                'React Router',
+                'i18next',
+                'Node.js',
+                'Express',
+                'MongoDB',
+                'Mongoose',
+                'JWT',
+                'Resend',
+                'Vitest',
+                'Nginx',
+                'Cloudflare',
+                'DigitalOcean',
+            ],
+            status: 'live',
+            liveUrl: 'https://tavelore.com/',
         },
     ],
 };
