@@ -1249,8 +1249,7 @@
             </ul>
         </div>
         <div class="footer-bottom">
-            ©
-            <script>document.write(new Date().getFullYear())</script>
+            © <span id="currentYear"></span>
             All Rights reserved <br>
             <a href="pp.html" target="_blank" style="color: inherit; text-decoration: none">Privacy Policy</a>
         </div>
@@ -1263,6 +1262,9 @@
     const burgerMenu = document.getElementById("burgerMenu");
     const burgerClose = document.getElementById("burgerClose");
     const navLinks = burgerMenu.querySelectorAll("a");
+    const currentYear = document.getElementById("currentYear");
+
+    currentYear.textContent = new Date().getFullYear();
 
     burgerToggle.addEventListener("click", () => {
         burgerMenu.classList.add("active");

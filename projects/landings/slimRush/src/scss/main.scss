@@ -154,13 +154,6 @@ header .btn-try:after, header .lang li a:after, header .menu-container:before, s
 }
 
 @font-face {
-    font-family: HiraMin;
-    font-style: normal;
-    font-weight: 500;
-    src: url(../fonts/HiraMinProN-W3-AlphaNum.ttf) format("truetype")
-}
-
-@font-face {
     font-family: Campton;
     font-style: normal;
     font-weight: 300;
@@ -1137,7 +1130,7 @@ header .btn-try {
 }
 
 .jap {
-    font-family: HiraMin, sans-serif;
+    font-family: sans-serif;
     font-weight: 700
 }
 
